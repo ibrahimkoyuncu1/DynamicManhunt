@@ -1,0 +1,25 @@
+name: Build Plugin
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodu indir
+        uses: actions/checkout@v4
+
+      - name: Java 21 kur
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Maven ile derle
+        run: mvn package -B
+
+      - name: JAR dosyasını kaydet
+        uses: actions/upload-artifact@v4
+        with:
+          name: DynamicManhunt-JAR
+          path: target/DynamicManhunt-2.3.jar

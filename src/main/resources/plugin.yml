@@ -1,0 +1,26 @@
+name: DynamicManhunt
+version: 2.3
+main: com.kinglocal.manhunt.DynamicManhunt
+api-version: '1.21'
+author: kinglocal
+description: NBT Tag korumalı, Ghost-Item engelli, Ağ optimizasyonlu Mutlak Manhunt eklentisi.
+
+commands:
+  runner:
+    description: Manhunt oyununun Runner'ını belirler.
+    permission: manhunt.admin
+    usage: /runner <oyuncu>
+  hunter:
+    description: Manhunt oyununa avcı ekler.
+    permission: manhunt.admin
+    usage: /hunter <oyuncu>
+  manhunt:
+    description: Manhunt oyun döngüsünü başlatır veya durdurur.
+    permission: manhunt.admin
+    usage: /manhunt <start|stop>
+    aliases: [mh]
+
+permissions:
+  manhunt.admin:
+    description: Manhunt yönetici komutlarına erişim.
+    default: op
